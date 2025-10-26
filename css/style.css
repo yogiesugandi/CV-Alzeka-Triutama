@@ -1,0 +1,219 @@
+:root {
+  --primary-color: #1a365d;
+  --secondary-color: #2c5282;
+  --accent-color: #b98410;
+  --light-gray: #f7fafc;
+  --medium-gray: #e2e8f0;
+  --dark-gray: #4a5568;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Navigation */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+.nav-link a:hover {
+  color: var(--accent-color);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  margin-right: 2px;
+}
+
+.logo-img {
+  vertical-align: middle;
+}
+
+#brand-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hero section */
+.hero-bg {
+  background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)),
+    url("/img/book.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Card hover effect */
+.service-card,
+.process-card,
+.gallery-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.process-card:hover,
+.gallery-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial card */
+.testimonial-card {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02);
+}
+
+/* Form input */
+.form-input {
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(185, 132, 16, 0.1);
+}
+
+/* Button hover */
+.btn-primary {
+  background-color: var(--primary-color);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-accent:hover {
+  background-color: #a5760e;
+  transform: translateY(-2px);
+}
+
+/* Floating CTA */
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#backToTop:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Gallery filter */
+.filter-btn {
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Process step */
+.process-step {
+  position: relative;
+}
+
+.process-step::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--medium-gray);
+  z-index: -1;
+}
+
+.process-step:last-child::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .process-step::after {
+    display: none;
+  }
+}
